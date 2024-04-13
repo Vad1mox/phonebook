@@ -33,8 +33,16 @@ def open_contact():
         for line in file:
             print("\t\t".join(line.split(";")))
 
+def find_line():
+    with open('phonebook.txt', 'r', encoding='utf-8') as file:
+        data = int(input("Введите номер строки: "))
+        for index, line in enumerate(file):
+            if index == data - 1:
+                return line
+        print("Строка не обнаружена")
+
 def coppy():
-    line = find_contact()
+    line = find_line()
     if line is None:
         return None
     coppy_to = input("Введите название файла, в который нужно скопировать данные: ")
