@@ -35,6 +35,8 @@ def open_contact():
 
 def coppy():
     line = find_contact()
+    if line is None:
+        return None
     coppy_to = input("Введите название файла, в который нужно скопировать данные: ")
     with open(coppy_to, 'a', encoding='utf-8') as file:        
         file.write(line)
